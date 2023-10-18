@@ -1,6 +1,6 @@
 import requests
 import os
-from Download import *
+from download import *
 
 
 headers = {
