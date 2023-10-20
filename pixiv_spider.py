@@ -1,12 +1,5 @@
 from download import *
 
-
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36 Edg/84.0.522.63',
-    'Cookie': ''
-}
-
-
 if __name__ == "__main__":
     print('''1.下载排行榜(日/周/月榜)
 2.下载画师主页
