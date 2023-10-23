@@ -7,7 +7,7 @@ import threading
 # Lock = threading.Lock()
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36 Edg/84.0.522.63',
-    'Cookie': ''
+    'Cookie': 'p_ab_id=5; p_ab_id_2=3; p_ab_d_id=878920109; device_token=da7c95eb7c24722f6ba5debc6cead49d; privacy_policy_agreement=6; first_visit_datetime=2023-09-24+20%3A38%3A44; webp_available=1; c_type=21; privacy_policy_notification=0; a_type=0; b_type=0; login_ever=yes; _fbp=fb.1.1695555532455.233515470; yuid_b=EjQWgpA; first_visit_datetime_pc=2023-09-24%2020%3A45%3A54; _ga_3WKBFJLFCP=GS1.1.1695555526.1.1.1695555952.0.0.0; _gcl_au=1.1.5439523.1695561924; PHPSESSID=39211450_8Tio5idt0qYi2DxCGkgDY9kiLoGmd2Ac; _ga_MZ1NL4PHH0=GS1.1.1695651333.2.0.1695651337.0.0.0; QSI_S_ZN_5hF4My7Ad6VNNAi=v:0:0; _gid=GA1.2.951869111.1697588916; _im_vid=01HD02ZE0PZ9JWGB7BYBMCHFTF; cto_bundle=uLU36l9LSmhFU25aNWlIYzNvSUQ2dnpSODJqZmRrT2NUY0JneUthTDglMkZudyUyRnNUQmpmT3MlMkI5amdtSFBmMTRrcmhBOU1yJTJCMmdiNFJKekZWZlBkc0U0eWE2UFhBeGwxazRIaXQlMkJHdEtSaFJPc25mdlN5bVRoNm1CaXJTRURaM0xSclpaZUtLNjhJdWwzYW9XbldGY0FYRUVtbThRJTNEJTNE; __cf_bm=nDfn9MJbTmniDCYH9Dm3S23uKvdIHtpE3sNN5_.6dK4-1697808524-0-AdLROS/G2QvL1iL+DARRarvpXlOXs1u1GpVkaq9bYzYfo8JrEZIzb0Rk+ywoMa3dK2CD/sByxkjthyxTKtnSnztHRLq3hPG5MyXcqPE1wSsQ; _ga=GA1.1.281923281.1695555401; _ga_75BBYNYN9J=GS1.1.1697808533.16.0.1697808533.0.0.0; cf_clearance=pDtOLPYGH5GgegCwCB9EZwy8988.IbLiuLCZMZR7NhQ-1697808547-0-1-9f89d693.e24f240a.c8888973-0.2.1697808547'
 }
 
 
