@@ -1,8 +1,12 @@
 import os
-import time
 import requests
+import threading
 from threading import Thread
 
+
+max_connections = 10  # 定义最大线程数,可根据网速修改
+pool_sema = threading.BoundedSemaphore(max_connections)  # 或使用Semaphore方法
+thread_list = []
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36 Edg/84.0.522.63',
@@ -29,6 +33,7 @@ def download_img(url, referer, i, mode):  # 获取到图片url后定义个函数
 
     with open(f"{mode}/{name}", "wb") as file:
         file.write(response.content)
+
 
 def download_img_1(url, referer, mode):  # 获取到图片url后定义个函数用于下载
     headers_download = {
@@ -71,9 +76,13 @@ def crawler_ranking(url, page, mode):  # https://www.pixiv.net/ranking.php?mode=
         for b in image_data:  # thumb_mini/small/regular/original
             t = Thread(target=download_img, args=(b['urls']['original'], image_1["referer"], page * 50 + i + 1, mode),
                        name=image_1['p_id'])
-            t.start()  # 如果不加referer字段，直接请求下载链接p站不给结果
-        print(f'第{page * 50 + i + 1}张正在下载')
-        time.sleep(0.5)
+            thread_list.append(t)
+
+    for t in thread_list:
+        t.start()  # 调用start()方法，开始执行
+
+    for t in thread_list:
+        t.join()  # 子线程调用join()方法，使主线程等待子线程运行完毕之后才退出
 
 
 def crawler_users(url, mode):  # https://www.pixiv.net/ajax/user/23945843/profile/all?lang=zh
@@ -90,10 +99,13 @@ def crawler_users(url, mode):  # https://www.pixiv.net/ajax/user/23945843/profil
         for b in image_data:  # thumb_mini/small/regular/original
             t = Thread(target=download_img_1, args=(b['urls']['original'], Referer_, mode),
                        name=image_1)
-            t.start()  # 如果不加referer字段，直接请求下载链接p站不给结果
-        print(f'第{i + 1}张正在下载')
-        time.sleep(0.5)
+            thread_list.append(t)
 
+    for t in thread_list:
+        t.start()  # 调用start()方法，开始执行
+
+    for t in thread_list:
+        t.join()  # 子线程调用join()方法，使主线程等待子线程运行完毕之后才退出
 
 def crawler_latest(url, page, mode):#  https://www.pixiv.net/ajax/follow_latest/illust?p=1&mode=r18&lang=zh
     res = requests.get(url, headers=headers)
@@ -108,6 +120,10 @@ def crawler_latest(url, page, mode):#  https://www.pixiv.net/ajax/follow_latest/
         for b in image_data:  # thumb_mini/small/regular/original
             t = Thread(target=download_img_1, args=(b['urls']['original'], Referer_,  mode),
                        name=image_1)
-            t.start()  # 如果不加referer字段，直接请求下载链接p站不给结果
-        print(f'第{page * 60 + i + 1}张正在下载')
-        time.sleep(0.5)
+            thread_list.append(t)
+
+    for t in thread_list:
+        t.start()  # 调用start()方法，开始执行
+
+    for t in thread_list:
+        t.join()  # 子线程调用join()方法，使主线程等待子线程运行完毕之后才退出

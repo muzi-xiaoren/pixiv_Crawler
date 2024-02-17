@@ -43,7 +43,8 @@ F12打开开发者模式，点击网络，在最上面的www.pixiv.net往下滑�
 2. 想要查找下载图片出处时，只需要把作品添加到下面的url后面就可以去到原图片出处了。
 >https://www.pixiv.net/artworks/ 如 https://www.pixiv.net/artworks/89937761
 3. 多线程报错问题(比如下面这样的)，由于在学校的时候网速很快没有出现这种错误。但是回家后网速跟不上下载速度导致报错。
->(Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))
+> Max retries exceeded with url: /ajax/illust/115963059/pages?lang=zh (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:992)')))
 >
-> 可以动态调整下面的time.sleep中的时间，如果网速快可以注释，如果网速慢，建议停得久点。v
+> 可以动态调整下面的time.sleep中的时间，如果网速快可以注释，如果网速慢，建议停得久点。
 >>![](src/img_6.png)
+4.download_1.py是多线程修改测试版，由于加速器最近不佳，没有测试出来效果。建议还是使用download.py进行下载。
