@@ -30,6 +30,7 @@ def download_img(url, referer, i, mode):  # 获取到图片url后定义个函数
     with open(f"{mode}/{name}", "wb") as file:
         file.write(response.content)
 
+
 def download_img_1(url, referer, mode):  # 获取到图片url后定义个函数用于下载
     headers_download = {
         "referer": str(referer)
@@ -49,6 +50,7 @@ def download_img_1(url, referer, mode):  # 获取到图片url后定义个函数�
 
     with open(f"{mode}/{name}", "wb") as file:
         file.write(response.content)
+
 
 def crawler_ranking(url, page, mode):  # https://www.pixiv.net/ranking.php?mode=monthly_r18&p=1&format=json   # https://www.pixiv.net/bookmark_new_illust
     res = requests.get(url, headers=headers)
