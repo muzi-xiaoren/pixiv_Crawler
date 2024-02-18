@@ -13,7 +13,7 @@ F12打开开发者模式，点击网络，在最上面的www.pixiv.net往下滑�
 把cookie复制到download.py里的第8行的headers里面。
 ---
 
-### 运行pixiv_spider，会出现提示让你输入三种下载模式。
+### 运行pixiv_Crawler，会出现提示让你输入三种下载模式。
 
 ## 第一种：下载排行榜
 
