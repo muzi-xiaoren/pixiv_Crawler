@@ -1,3 +1,5 @@
+![:name](https://moe-counter.glitch.me/get/@muzi-pixiv_Crawler?theme=rule34)
+
 # pixiv_Crawler
 
 ## 首先填充cookies(没填充无法运行)
