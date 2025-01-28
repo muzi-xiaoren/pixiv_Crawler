@@ -11,12 +11,13 @@ thread_list = []
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36 Edg/84.0.522.63',
-    'Cookie': 'p_ab_id=5; p_ab_id_2=3; p_ab_d_id=878920109; privacy_policy_agreement=6; first_visit_datetime=2023-09-24+20%3A38%3A44; c_type=21; privacy_policy_notification=0; a_type=0; b_type=0; login_ever=yes; yuid_b=EjQWgpA; first_visit_datetime_pc=2023-09-24%2020%3A45%3A54; _ga_3WKBFJLFCP=GS1.1.1695555526.1.1.1695555952.0.0.0; cto_bundle=uLU36l9LSmhFU25aNWlIYzNvSUQ2dnpSODJqZmRrT2NUY0JneUthTDglMkZudyUyRnNUQmpmT3MlMkI5amdtSFBmMTRrcmhBOU1yJTJCMmdiNFJKekZWZlBkc0U0eWE2UFhBeGwxazRIaXQlMkJHdEtSaFJPc25mdlN5bVRoNm1CaXJTRURaM0xSclpaZUtLNjhJdWwzYW9XbldGY0FYRUVtbThRJTNEJTNE; PHPSESSID=39211450_xUmsK59WCEKBkdC5ZSJ0cjng1oT0qRAo; device_token=707458420d74c2f762f2a79d0b3b46d0; _ga_MZ1NL4PHH0=GS1.1.1705717505.5.0.1705717511.0.0.0; QSI_S_ZN_5hF4My7Ad6VNNAi=v:0:0; __cf_bm=StmIy1.eTCT9YcEPUh8b62ZCsRTeCK_Fzoe_8FTBGbI-1705835412-1-ATx8Hgh8ljfjh0UceoYNb4vOy6L3Ej50jooFP78Mzx3xxKNf2UryNVfvJLy5aj3/y3FK2O82DQn/1PPxyGULVpsU0kZJh4CElclkDx+Bqpev; _ga=GA1.1.281923281.1695555401; _ga_75BBYNYN9J=GS1.1.1705835424.22.0.1705835424.0.0.0; cf_clearance=IXf7XgMLNgyriKSqZTIZlrrkznHO7edwsL28kqwuM.Y-1705835427-1-AXk+qpvGbFS+14lZrVH05mUsh3c4QnSsrGeAAAWwZbMmgU6Vv1MtPvIF1VvIu2QWkOFqn2/K14eIJxNbKZ2TwlY='
+    'Cookie': ''
 }
 
 
 def download_img(url, referer, i, mode):  # 获取到图片url后定义个函数用于下载
     headers_download = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
         "referer": str(referer)
     }
     name = str(i) + '_' + url.split("/")[-1]  # 将图片链接以斜杠分割后取最后面的信息作为名字，因为爬取的图片有jeg也有png
@@ -38,6 +39,7 @@ def download_img(url, referer, i, mode):  # 获取到图片url后定义个函数
 
 def download_img_1(url, referer, mode):  # 获取到图片url后定义个函数用于下载
     headers_download = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
         "referer": str(referer)
     }
     name = url.split("/")[-1]  # 将图片链接以斜杠分割后取最后面的信息作为名字，因为爬取的图片有jeg也有png
